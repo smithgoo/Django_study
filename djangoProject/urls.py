@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .views import views,testDB
+from .views import views,testDB,userInfo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +28,8 @@ urlpatterns = [
     path(r'index/search$',testDB.getInfoById),
     path(r'index/update',testDB.updateInfo),
     path(r'index/delete',testDB.deleteInfo),
+
+    path('register',userInfo.register),
+    path('login',userInfo.login),
 
 ]
